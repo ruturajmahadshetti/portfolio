@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block title %}Home page{% endblock %}
+
+{% block content %}
+<style>
+  .circle-container {
+    position: absolute;
+    top: 150px;
+    right: 200px;
+    width: 350px;
+    height: 350px;
+  }
+
+  .round-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid #3498db;
+    object-fit: cover;
+    display: block;
+  }
+
+  .inner-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    font-size: 12px;
+    background-color: rgba(52, 152, 219, 0.9);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  .zoom-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .zoom-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+  }
+
+  .zoom-modal.show {
+    display: flex;
+  }
+ .info {
+	position: absolute;
+    top: 200px;
+    left: 400px;
+    padding: 50px 50px 50px 50px;
+    width: 700px;
+    height: 600px;
+  }
+  .name	{
+   position:absolute;
+   top: 530px;
+   right: 130px;
+   width: 500px;
+   height: 100px;
+  }
+
+</style>
+
+<div class="circle-container">
+  <img src="{{ url_for('static', filename='imgs/Ruturaj.jpg') }}" alt="Avatar" class="round-img">
+  <button class="inner-btn" onclick="document.getElementById('zoomModal').classList.add('show')">Click</button>
+</div>
+
+<div class="zoom-modal" id="zoomModal" onclick="this.classList.remove('show')">
+  <img src="{{ url_for('static', filename='imgs/Ruturaj.jpg') }}" alt="Avatar Fullscreen">
+</div>
+<div class="info" style="background-color: #FAF9F6;">
+  <p align="justify"> &nbsp; &nbsp; I have completed a Master’s degree in Artificial Intelligence from Chonnam National University in Gwangju, South Korea, and a Bachelor of Engineering in Computer Science from Shivaji University in Kolhapur, India. <br>
+  <br>
+&nbsp; &nbsp; My primary research focuses on addressing various challenges in the field of computer vision. I have extensive experience in multi-object detection and recognition, face recognition, text recognition, and multimodal large language models (LLMs), all within the broader scope of computer vision.<br>
+<br>
+&nbsp; &nbsp;Currently, I am working as an AI researcher at the Graduate School of Data Science, Chonnam National University, where I continue to contribute to cutting-edge research in the field of multimodal LLMs.</p>
+</div>
+
+<div class='name' align='center'>
+	<h1><i>Ruturaj Mahadshetti</i></h1>
+	<h3>AI Researcher</h3>
+	<a href="https://sites.google.com/view/cnucpslab/%ED%99%88?authuser=0">@CPS LAB</a>
+	<p>Graduate School of Data Science,<br>Chonnam National University,<br>Gwangju, South Korea.</p>
+	<br>
+	<a href="https://www.linkedin.com/in/ruturaj-mahadshetti-018ab4202/" target="_blank" style="margin: 0 15px; color: #0077B5;">
+    		<i class="fab fa-linkedin fa-2x"></i>
+  	</a>
+  	<a href="mailto:ruturajm9770@gmail.com" target="_blank" style="margin: 0 15px; color: #D44638;">
+    		<i class="fas fa-envelope fa-2x"></i>
+  	</a>
+  	<a href="https://github.com/ruturajmahadshetti" target="_blank" style="margin: 0 15px; color: #333;">
+    		<i class="fab fa-github fa-2x"></i>
+  	</a>
+</div>
+
+{% endblock %}
+
