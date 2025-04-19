@@ -62,6 +62,7 @@
     padding: 50px;
     width: 700px;
     height: 600px;
+    background-color: #FAF9F6;
   }
 
   .name {
@@ -73,77 +74,70 @@
     text-align: center;
   }
 
+  /* MOBILE STYLES */
   @media (max-width: 768px) {
-  body {
-    padding: 10px;
-    margin: 0;
-  }
+    .circle-container {
+      position: relative;
+      top: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 180px;
+      height: 180px;
+    }
 
-  .circle-container {
-    position: relative;
-    top: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 180px;
-    height: 180px;
-  }
+    .inner-btn {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      transform: none;
+      display: block;
+      margin: 10px auto 0;
+    }
 
-  .round-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #3498db;
-  }
+    .info {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      padding: 20px;
+      background-color: #FAF9F6;
+      box-sizing: border-box;
+      margin-top: 20px;
+    }
 
-  .inner-btn {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    display: block;
-    margin: 10px auto 0 auto;
+    .name {
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+      text-align: center;
+    }
   }
-
-  .info {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    padding: 20px;
-    margin-top: 20px;
-    box-sizing: border-box;
-  }
-
-  .name {
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-    text-align: center;
-  }
-}
 </style>
 
+<!-- Profile Picture + Button -->
 <div class="circle-container">
   <img src="{{ url_for('static', filename='imgs/Ruturaj_off.jpg') }}" alt="Avatar" class="round-img">
   <button class="inner-btn" onclick="document.getElementById('zoomModal').classList.add('show')">Click</button>
 </div>
 
+<!-- Zoom Modal -->
 <div class="zoom-modal" id="zoomModal" onclick="this.classList.remove('show')">
   <img src="{{ url_for('static', filename='imgs/Ruturaj_off.jpg') }}" alt="Avatar Fullscreen">
 </div>
 
-<div class="info" style="background-color: #FAF9F6;">
-  <p align="justify">
-    &nbsp; &nbsp; I have completed a Master’s degree in Artificial Intelligence from Chonnam National University in Gwangju, South Korea, and a Bachelor of Engineering in Computer Science from Shivaji University in Kolhapur, India. <br><br>
-    &nbsp; &nbsp; My primary research focuses on addressing various challenges in the field of computer vision. I have extensive experience in multi-object detection and recognition, face recognition, text recognition, and multimodal large language models (LLMs), all within the broader scope of computer vision.<br><br>
-    &nbsp; &nbsp;Currently, I am working as an AI researcher at the Graduate School of Data Science, Chonnam National University, where I continue to contribute to cutting-edge research in the field of multimodal LLMs.
-  </p>
+<!-- Info Text -->
+<div class="info">
+  <p align="justify"> &nbsp; &nbsp; I have completed a Master’s degree in Artificial Intelligence from Chonnam National University in Gwangju, South Korea, and a Bachelor of Engineering in Computer Science from Shivaji University in Kolhapur, India. <br><br>
+  &nbsp; &nbsp; My primary research focuses on addressing various challenges in the field of computer vision. I have extensive experience in multi-object detection and recognition, face recognition, text recognition, and multimodal large language models (LLMs), all within the broader scope of computer vision.<br><br>
+  &nbsp; &nbsp;Currently, I am working as an AI researcher at the Graduate School of Data Science, Chonnam National University, where I continue to contribute to cutting-edge research in the field of multimodal LLMs.</p>
 </div>
 
-<div class='name'>
+<!-- Name & Links -->
+<div class="name">
   <h1><i>Ruturaj Mahadshetti</i></h1>
   <h3>AI Researcher</h3>
   <a href="https://sites.google.com/view/cnucpslab/%ED%99%88?authuser=0">@CPS LAB</a>
@@ -159,6 +153,5 @@
     <i class="fab fa-github fa-2x"></i>
   </a>
 </div>
-
 {% endblock %}
 
