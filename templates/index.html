@@ -54,22 +54,60 @@
   .zoom-modal.show {
     display: flex;
   }
- .info {
-	position: absolute;
+
+  .info {
+    position: absolute;
     top: 200px;
     left: 400px;
-    padding: 50px 50px 50px 50px;
+    padding: 50px;
     width: 700px;
     height: 600px;
   }
-  .name	{
-   position:absolute;
-   top: 530px;
-   right: 130px;
-   width: 500px;
-   height: 100px;
+
+  .name {
+    position: absolute;
+    top: 530px;
+    right: 130px;
+    width: 500px;
+    height: 100px;
+    text-align: center;
   }
 
+  /* 🔻 Responsive design for smaller devices */
+  @media (max-width: 768px) {
+    .circle-container {
+      position: static;
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .info {
+      position: static;
+      width: 90%;
+      height: auto;
+      padding: 20px;
+      margin: 20px auto;
+    }
+
+    .name {
+      position: static;
+      width: 100%;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .inner-btn {
+      position: static;
+      margin-top: 10px;
+    }
+
+    .zoom-modal img {
+      max-width: 95%;
+      max-height: 95%;
+    }
+  }
 </style>
 
 <div class="circle-container">
@@ -80,29 +118,30 @@
 <div class="zoom-modal" id="zoomModal" onclick="this.classList.remove('show')">
   <img src="{{ url_for('static', filename='imgs/Ruturaj_off.jpg') }}" alt="Avatar Fullscreen">
 </div>
+
 <div class="info" style="background-color: #FAF9F6;">
-  <p align="justify"> &nbsp; &nbsp; I have completed a Master’s degree in Artificial Intelligence from Chonnam National University in Gwangju, South Korea, and a Bachelor of Engineering in Computer Science from Shivaji University in Kolhapur, India. <br>
-  <br>
-&nbsp; &nbsp; My primary research focuses on addressing various challenges in the field of computer vision. I have extensive experience in multi-object detection and recognition, face recognition, text recognition, and multimodal large language models (LLMs), all within the broader scope of computer vision.<br>
-<br>
-&nbsp; &nbsp;Currently, I am working as an AI researcher at the Graduate School of Data Science, Chonnam National University, where I continue to contribute to cutting-edge research in the field of multimodal LLMs.</p>
+  <p align="justify">
+    &nbsp; &nbsp; I have completed a Master’s degree in Artificial Intelligence from Chonnam National University in Gwangju, South Korea, and a Bachelor of Engineering in Computer Science from Shivaji University in Kolhapur, India. <br><br>
+    &nbsp; &nbsp; My primary research focuses on addressing various challenges in the field of computer vision. I have extensive experience in multi-object detection and recognition, face recognition, text recognition, and multimodal large language models (LLMs), all within the broader scope of computer vision.<br><br>
+    &nbsp; &nbsp;Currently, I am working as an AI researcher at the Graduate School of Data Science, Chonnam National University, where I continue to contribute to cutting-edge research in the field of multimodal LLMs.
+  </p>
 </div>
 
-<div class='name' align='center'>
-	<h1><i>Ruturaj Mahadshetti</i></h1>
-	<h3>AI Researcher</h3>
-	<a href="https://sites.google.com/view/cnucpslab/%ED%99%88?authuser=0">@CPS LAB</a>
-	<p>Graduate School of Data Science,<br>Chonnam National University,<br>Gwangju, South Korea.</p>
-	<br>
-	<a href="https://www.linkedin.com/in/ruturaj-mahadshetti-018ab4202/" target="_blank" style="margin: 0 15px; color: #0077B5;">
-    		<i class="fab fa-linkedin fa-2x"></i>
-  	</a>
-  	<a href="mailto:ruturajm9770@gmail.com" target="_blank" style="margin: 0 15px; color: #D44638;">
-    		<i class="fas fa-envelope fa-2x"></i>
-  	</a>
-  	<a href="https://github.com/ruturajmahadshetti" target="_blank" style="margin: 0 15px; color: #333;">
-    		<i class="fab fa-github fa-2x"></i>
-  	</a>
+<div class='name'>
+  <h1><i>Ruturaj Mahadshetti</i></h1>
+  <h3>AI Researcher</h3>
+  <a href="https://sites.google.com/view/cnucpslab/%ED%99%88?authuser=0">@CPS LAB</a>
+  <p>Graduate School of Data Science,<br>Chonnam National University,<br>Gwangju, South Korea.</p>
+  <br>
+  <a href="https://www.linkedin.com/in/ruturaj-mahadshetti-018ab4202/" target="_blank" style="margin: 0 15px; color: #0077B5;">
+    <i class="fab fa-linkedin fa-2x"></i>
+  </a>
+  <a href="mailto:ruturajm9770@gmail.com" target="_blank" style="margin: 0 15px; color: #D44638;">
+    <i class="fas fa-envelope fa-2x"></i>
+  </a>
+  <a href="https://github.com/ruturajmahadshetti" target="_blank" style="margin: 0 15px; color: #333;">
+    <i class="fab fa-github fa-2x"></i>
+  </a>
 </div>
 
 {% endblock %}
